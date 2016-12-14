@@ -27,7 +27,6 @@ class SierpinskiTest {
     assertEquals(Pos(0.5f, (Math.sqrt(3) / 2).toFloat), t.c)
     assertEquals(SColor.White, t.color)
   }
-
   @Test def siblingsTest(): Unit = {
     assertEquals(List(
       Triangle(Pos(0.25f, 0.4330127f), Pos(0.75f, 0.4330127f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
