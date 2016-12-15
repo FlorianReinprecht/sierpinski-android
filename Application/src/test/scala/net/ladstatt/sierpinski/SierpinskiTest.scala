@@ -1,5 +1,6 @@
 package net.ladstatt.sierpinski
 
+import net.ladstatt.sierpinski.SColor.White
 import org.junit.Test
 import org.junit.Assert.assertTrue
 import org.junit.Assert.assertEquals
@@ -21,11 +22,14 @@ class SierpinskiTest {
   /**
     * tests a triangle with length = 1
     */
+
   @Test def basicTriangle(): Unit = {
     assertEquals(Pos(0, 0), t.a)
     assertEquals(Pos(1, 0), t.b)
     assertEquals(Pos(0.5f, (Math.sqrt(3) / 2).toFloat), t.c)
     assertEquals(SColor.White, t.color)
+
+
   }
   @Test def siblingsTest(): Unit = {
     assertEquals(List(
@@ -47,14 +51,14 @@ class SierpinskiTest {
     assertEquals(
       Sierpinski(List(
         Triangle(Pos(0.0f, 0.0f), Pos(1.0f, 0.0f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.5f, 0.0f), Pos(0.75f, 0.4330127f), Pos(0.25f, 0.4330127f), SColor(0.0, 0.0, 0.0)),
-        Triangle(Pos(0.25f, 0.4330127f), Pos(0.75f, 0.4330127f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.0f, 0.0f), Pos(0.5f, 0.0f), Pos(0.25f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.5f, 0.0f), Pos(1.0f, 0.0f), Pos(0.75f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.25f, 0.4330127f), Pos(0.75f, 0.4330127f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.0f, 0.0f), Pos(0.5f, 0.0f), Pos(0.25f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
-        Triangle(Pos(0.5f, 0.0f), Pos(1.0f, 0.0f), Pos(0.75f, 0.4330127f), SColor(1.0, 1.0, 1.0)))), Sierpinski(Triangle(Pos(0, 0), 1), 1))
-  }
+  Triangle(Pos(0.5f, 0.0f), Pos(0.75f, 0.4330127f), Pos(0.25f, 0.4330127f), SColor(0.0, 0.0, 0.0)),
+  Triangle(Pos(0.25f, 0.4330127f), Pos(0.75f, 0.4330127f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
+  Triangle(Pos(0.0f, 0.0f), Pos(0.5f, 0.0f), Pos(0.25f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
+  Triangle(Pos(0.5f, 0.0f), Pos(1.0f, 0.0f), Pos(0.75f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
+  Triangle(Pos(0.25f, 0.4330127f), Pos(0.75f, 0.4330127f), Pos(0.5f, 0.8660254f), SColor(1.0, 1.0, 1.0)),
+  Triangle(Pos(0.0f, 0.0f), Pos(0.5f, 0.0f), Pos(0.25f, 0.4330127f), SColor(1.0, 1.0, 1.0)),
+  Triangle(Pos(0.5f, 0.0f), Pos(1.0f, 0.0f), Pos(0.75f, 0.4330127f), SColor(1.0, 1.0, 1.0)))), Sierpinski(Triangle(Pos(0, 0), 1), 1))
+}
 
   @Test def sierpinski7(): Unit = {
     assertEquals(7652, Sierpinski(Triangle(Pos(0, 0), 1), 7).triangles.length)
